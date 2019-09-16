@@ -39,8 +39,6 @@ def plugin_settings(settings):
     Set of plugin settings used by the Open Edx platform.
     More info: https://github.com/edx/edx-platform/blob/master/openedx/core/djangoapps/plugins/README.rst
     """
-    # In settings.py
-    settings.OPN_STUDENT_LIBRARY = 'openedx_proversity_notifications.edxapp_wrapper.backends.student_g_v1'
     settings.CHANNEL_LAYERS = {
         "default": {
             "BACKEND": "asgiref.inmemory.ChannelLayer",
@@ -51,3 +49,7 @@ def plugin_settings(settings):
     settings.INSTALLED_APPS.append(
         'channels'
     )
+
+    settings.OPN_MODULESTORE = 'openedx_proversity_notifications.edxapp_wrapper.backends.modulestore_g_v1'
+    settings.OPN_SAFE_SESSIONS = 'openedx_proversity_notifications.edxapp_wrapper.backends.safe_sessions_g_v1'
+    settings.OPN_STUDENT_LIBRARY = 'openedx_proversity_notifications.edxapp_wrapper.backends.student_g_v1'
