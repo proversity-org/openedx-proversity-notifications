@@ -17,7 +17,12 @@ configparser==3.7.4       # via pylint
 constantly==15.1.0        # via twisted
 cryptography==2.7         # via autobahn
 daphne==1.4.2             # via channels
-django==1.8.18
+decorator==4.4.0          # via dogapi
+django-model-utils==3.2.0  # via edx-submissions
+django==1.11.24
+dogapi==1.11.1            # via edx-submissions
+edx-opaque-keys==0.4.4
+edx-submissions==2.0.12
 enum34==1.1.6             # via astroid, cryptography
 futures==3.2.0            # via isort
 hyperlink==19.0.0         # via twisted
@@ -25,14 +30,20 @@ idna==2.8                 # via hyperlink
 incremental==17.5.0       # via twisted
 ipaddress==1.0.22         # via cryptography
 isort==4.3.21             # via pylint
+jsonfield==2.0.2          # via edx-submissions
 lazy-object-proxy==1.4.1  # via astroid
 mccabe==0.6.1             # via pylint
+pbr==5.4.3                # via stevedore
 pycodestyle==2.5.0
 pycparser==2.19           # via cffi
 pyhamcrest==1.9.0         # via twisted
 pylint==1.9.3
+pymongo==3.9.0            # via edx-opaque-keys
+pytz==2019.2              # via django, edx-submissions
+simplejson==3.16.0        # via dogapi
 singledispatch==3.4.0.3   # via astroid, pylint
-six==1.12.0               # via asgiref, astroid, autobahn, automat, cryptography, pyhamcrest, pylint, singledispatch, txaio
+six==1.12.0               # via asgiref, astroid, autobahn, automat, cryptography, edx-opaque-keys, pyhamcrest, pylint, singledispatch, stevedore, txaio
+stevedore==1.31.0         # via edx-opaque-keys
 twisted==19.7.0           # via daphne
 txaio==18.8.1             # via autobahn
 wrapt==1.11.2             # via astroid
