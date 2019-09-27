@@ -2,6 +2,7 @@
 Consumer file, includes all the consumers used by the plugin.
 """
 import re
+import logging
 
 from channels.generic.websockets import WebsocketDemultiplexer
 
@@ -11,6 +12,8 @@ from openedx_proversity_notifications.edxapp_wrapper.get_student_library import 
     get_course_enrollment,
 )
 from openedx_proversity_notifications.utils import is_course_staff
+
+logger = logging.getLogger(__name__)
 
 
 class OpenEdxSubmitionsDemultiplexer(WebsocketDemultiplexer):
@@ -27,6 +30,7 @@ class OpenEdxSubmitionsDemultiplexer(WebsocketDemultiplexer):
         """
         Decode the session cookie value and replace it on the message.
         """
+        logger.info('********************get_handler*********************')
         message = decode_safe_cookie_data(message, **kwargs)
         return super(OpenEdxSubmitionsDemultiplexer, self).get_handler(message, **kwargs)
 
@@ -34,6 +38,7 @@ class OpenEdxSubmitionsDemultiplexer(WebsocketDemultiplexer):
         """
         Validate if the user is authenticated and allow the web socket connection.
         """
+        logger.info('********************connect*********************')
         user = message.user
 
         if not user.is_authenticated():
@@ -45,6 +50,7 @@ class OpenEdxSubmitionsDemultiplexer(WebsocketDemultiplexer):
         """
         Generate the group list for the user connection.
         """
+        logger.info('********************connection_groups*********************')
         user = self.message.user
 
         if not user.is_authenticated():
