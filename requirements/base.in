@@ -6,3 +6,4 @@ pycodestyle==2.5.0
 channels==1.1.8
 edx-opaque-keys==0.4.4
 edx-submissions==2.0.12
+asgi-rabbitmq==0.5.5
